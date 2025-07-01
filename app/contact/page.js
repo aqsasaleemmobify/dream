@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="relative max-w-[1040px] mx-auto py-[52px]">
           <div className="max-w-[780px] mx-auto text-center text-white">
             <h1 className="lg:text-[70px] md:text-[50px] text-[34px] font-bold text-fade-in-up-wave">
-              Let's Talk
+              Lets Talk
             </h1>
             <p className="mt-4 mb-8 px-4 text-fade-in-up-wave">
               For all enquiries, feel free to contact us from the form below.

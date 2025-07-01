@@ -77,7 +77,7 @@ const Portfolio = () => {
             </h1>
             <p className="mt-4 mb-8 px-4 text-fade-in-up-wave">
               Welcome to our world of endless imagination and boundless
-              creativity. Let's embark on a remarkable journey where dreams
+              creativity. Lets embark on a remarkable journey where dreams
               become realities.
             </p>
             <div>
