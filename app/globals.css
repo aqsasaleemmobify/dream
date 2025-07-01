@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.bg-dream {
+  background-image: url("/images/HomeHeader.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 60px;
+}
+@keyframes textFadeInUpWave {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) rotate(-3deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.text-fade-in-up-wave {
+  animation: textFadeInUpWave 2s ease-out forwards;
+}
+/* fishes */
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fish-float-updown {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.fish-float-leftright {
+  animation: floatLeftRight 4s ease-in-out infinite;
+}
+/*  */
+#scrl-icon {
+  --clr: #ffffff;
+  display: block;
+  overflow: visible;
+}
+
+.scrl-body {
+  fill: none;
+  stroke: var(--clr);
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1.5;
+  animation: scroll-parallax 1.5s cubic-bezier(0.41, 0.07, 0.83, 0.67) infinite
+    running;
+}
+
+@keyframes scroll-parallax {
+  25% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-20%);
+  }
+}
+
+.scrl-wheel {
+  fill: var(--clr);
+  transform-origin: bottom;
+  animation: scroll-animation 1.5s linear infinite running;
+  will-change: transform;
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: translateY(-90%) scale(0.7, 0.1);
+  }
+  10% {
+    transform: translateY(-90%) scaleY(0.3);
+  }
+  25% {
+    transform: translateY(-20%) scaleY(1);
+  }
+  75% {
+    transform: translateY(40%) scaleY(1);
+  }
+  100% {
+    transform: translateY(20%) scale(0.8, 0.1);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* .animate-float {
+  animation: float 4s ease-in-out infinite;
+} */
+@keyframes float-up-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-left-right {
+  0%,
+  100% {
+    transform: translateX(4px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+}
+
+.animate-float-up-down {
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+.animate-float-left-right {
+  animation: float-left-right 3s ease-in-out infinite;
+}
+
+
+/*  */
+/* Fish swimming animation for water-like movement */
+
+@keyframes fishSwimming {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(15px, 3px) rotate(4deg);
+  }
+  20% {
+    transform: translate(30px, -2px) rotate(8deg);
+  }
+  30% {
+    transform: translate(45px, 2px) rotate(4deg);
+  }
+  40% {
+    transform: translate(30px, -1px) rotate(0deg);
+  }
+  50% {
+    transform: translate(15px, 2px) rotate(-4deg);
+  }
+  60% {
+    transform: translate(0, -3px) rotate(-8deg);
+  }
+  70% {
+    transform: translate(-15px, 1px) rotate(-4deg);
+  }
+  80% {
+    transform: translate(-30px, -2px) rotate(0deg);
+  }
+  90% {
+    transform: translate(-15px, 3px) rotate(4deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Fish swimming from left to right */
+.fish-swim-left-to-right {
+  animation: fishSwimmingLeftToRight 15s ;
+}
+
+/* Fish swimming with tail movement */
+.fish-swim {
+  animation: fishSwimming 8s ease-in-out infinite;
+}
+
+/* Slower fish */
+.fish-swim-slow {
+  animation: fishSwimming 12s ease-in-out infinite;
+}
+
+/* Smaller movement range */
+
+
+.fish-swim-small {
+  animation: fishSwimmingSmall 6s ease-in-out infinite;
+}
+
+.marquee-slide:hover img {
+  filter: brightness(1.05);
+  transform: scale(1.03);
+}
